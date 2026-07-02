@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Search, Bell, ChevronRight } from 'lucide-react'
+import { Search, ChevronRight } from 'lucide-react'
 import Sidebar, { navItems } from './components/Sidebar'
+import { NotificationProvider, NotificationBell } from './components/Notifications'
 import Dashboard from './modules/Dashboard'
 import Fleet from './modules/Fleet'
 import Cadets from './modules/Cadets'
@@ -29,6 +30,7 @@ export default function App() {
   const current = navItems.find((n) => n.id === active)
 
   return (
+    <NotificationProvider>
     <div className="doodle-bg min-h-screen">
       <Sidebar active={active} onChange={setActive} />
 
@@ -50,10 +52,7 @@ export default function App() {
                 className="bg-transparent outline-none text-sm text-slate-600 placeholder:text-slate-400 w-full"
               />
             </div>
-            <button className="relative grid place-items-center w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors">
-              <Bell className="w-5 h-5 text-slate-500" />
-              <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white" />
-            </button>
+            <NotificationBell />
             <div className="flex items-center gap-2 pl-1">
               <div className="grid place-items-center w-9 h-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-white text-xs font-bold">
                 VS
@@ -71,5 +70,6 @@ export default function App() {
         </footer>
       </div>
     </div>
+    </NotificationProvider>
   )
 }
