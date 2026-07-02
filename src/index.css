@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* WhatsApp-style aviation doodle texture. Faint low-opacity line-art. */
+.doodle-bg {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%230ea5e9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.06'%3E%3C!-- paper plane --%3E%3Cpath d='M40 60 L110 40 L80 100 L70 78 Z M70 78 L110 40'/%3E%3C!-- cloud --%3E%3Cpath d='M220 60 a18 18 0 0 1 34 -6 a15 15 0 0 1 20 20 h-56 a14 14 0 0 1 2 -14'/%3E%3C!-- propeller --%3E%3Cg transform='translate(340 70)'%3E%3Ccircle cx='0' cy='0' r='6'/%3E%3Cpath d='M0 -6 C -12 -26 -12 -34 0 -34 C 12 -34 12 -26 0 -6'/%3E%3Cpath d='M0 6 C -12 26 -12 34 0 34 C 12 34 12 26 0 6'/%3E%3Cpath d='M-6 0 C -26 -12 -34 -12 -34 0 C -34 12 -26 12 -6 0'/%3E%3Cpath d='M6 0 C 26 -12 34 -12 34 0 C 34 12 26 12 6 0'/%3E%3C/g%3E%3C!-- wrench --%3E%3Cg transform='translate(60 200) rotate(35)'%3E%3Cpath d='M0 0 a14 14 0 1 0 -8 -12 l-22 22 a6 6 0 0 0 8 8 l22 -22 a14 14 0 0 0 0 4'/%3E%3C/g%3E%3C!-- compass --%3E%3Cg transform='translate(210 210)'%3E%3Ccircle cx='0' cy='0' r='26'/%3E%3Cpath d='M-10 10 L2 -2 L10 -10 L-2 2 Z'/%3E%3C/g%3E%3C!-- control tower --%3E%3Cg transform='translate(330 210)'%3E%3Cpath d='M-10 30 L-6 4 L6 4 L10 30 Z'/%3E%3Cpath d='M-12 4 L12 4 L8 -8 L-8 -8 Z'/%3E%3Cpath d='M0 -8 L0 -22 M-8 -22 L8 -22'/%3E%3C/g%3E%3C!-- clipboard --%3E%3Cg transform='translate(60 340)'%3E%3Crect x='-14' y='-18' width='28' height='38' rx='4'/%3E%3Crect x='-6' y='-24' width='12' height='10' rx='2'/%3E%3Cpath d='M-8 -6 L8 -6 M-8 2 L8 2 M-8 10 L2 10'/%3E%3C/g%3E%3C!-- airplane --%3E%3Cg transform='translate(210 340)'%3E%3Cpath d='M-24 4 L14 -2 L24 -10 C 28 -12 30 -8 27 -5 L18 4 L14 22 L8 20 L10 8 L-4 10 L-8 18 L-12 16 L-10 6 L-24 4 Z'/%3E%3C/g%3E%3C!-- cloud small --%3E%3Cpath d='M330 330 a14 14 0 0 1 26 -4 a11 11 0 0 1 15 15 h-43 a11 11 0 0 1 2 -11'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  background-clip: content-box;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
